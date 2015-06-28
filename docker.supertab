@@ -1,0 +1,82 @@
+# -*- mode: shell-script; mode: flyspell-prog; mode: electric-pair; ispell-local-dictionary: "american" -*-
+
+### docker.supertab --- List of docker CLI commands run through the
+###                     super setuid wrapper.
+
+### Copyright (C) 2015 António P. P. Almeida <appa@perusio.net>
+
+### Author: António P. P. Almeida <appa@perusio.net>
+
+### Permission is hereby granted, free of charge, to any person obtaining a
+### copy of this software and associated documentation files (the "Software"),
+### to deal in the Software without restriction, including without limitation
+### the rights to use, copy, modify, merge, publish, distribute, sublicense,
+### and/or sell copies of the Software, and to permit persons to whom the
+### Software is furnished to do so, subject to the following conditions:
+
+### The above copyright notice and this permission notice shall be included in
+### all copies or substantial portions of the Software.
+
+### Except as contained in this notice, the name(s) of the above copyright
+### holders shall not be used in advertising or otherwise to promote the sale,
+### use or other dealings in this Software without prior written authorization.
+
+### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+### IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+### FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+### THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+### LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+### FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+### DEALINGS IN THE SOFTWARE.
+
+## Builds docker containers, given a branch.
+## Example :  '$super docker-build luq.io/base:<branchname>'.
+docker-build "/usr/bin/docker build -t" \
+             info="Builds a container. Receives minimally a tag name as argument." \
+             $docker_users
+
+## Runs a container, given a repository and a branch.
+## Example: '$super docker-run -v=/path/to/api-repositories:/site/api luq.io/base:<branchname>'.
+docker-run "/usr/bin/docker run -d -P" \
+           info="Run a given image in detached mode and publish to random host ports." \
+           $docker_users
+
+## Attach to a running container.
+docker-attach "/usr/bin/docker attach" \
+              info="Attach to a running container." \
+              $docker_users
+
+## Stop a container, given a docker container name.
+docker-stop "/usr/bin/docker stop" \
+            info="Stop a given container." \
+            $docker_users
+
+## Delete a container, given a docker container name.
+docker-rm "/usr/bin/docker rm" \
+          info="Remove a stopped container." \
+          $docker_users
+
+## Docker inspection.
+docker-inspect "/usr/bin/docker inspect" \
+               info="Inspect a running container." \
+               $docker_users
+
+## Executes a given command.
+docker-exec "/usr/bin/docker exec" \
+            info="Execute a given command on a running container." \
+            $docker_users
+
+## List containers, running and not running.
+docker-ps "/usr/bin/docker ps" \
+          info="List containers. Running by default. All if '-a'." \
+          $docker_users
+
+## List images, top level and not only.
+docker-images "/usr/bin/docker images" \
+              info="List container images. Top level by default. Including intermediate if '-a'." \
+              $docker_users
+
+## Pause a running container.
+docker-pause "/usr/bin/docker pause" \
+             info="Pause a given container." \
+             $docker_users
