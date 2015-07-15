@@ -56,6 +56,12 @@ docker-rm "/usr/bin/docker rm" \
           info="Remove a stopped container." \
           $docker_users
 
+
+## Delete a container image, given an image name.
+docker-rmi "/usr/bin/docker rmi" \
+           info="Remove a container image." \
+           $docker_users
+
 ## Docker inspection.
 docker-inspect "/usr/bin/docker inspect" \
                info="Inspect a running container." \
