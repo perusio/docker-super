@@ -40,10 +40,14 @@ docker commands.
      
         git clone https://github.com/perusio/docker-super.git
 
-  5. Include the `docker.supertab` in your `/etc/super.tab`:
+  5. Make the `docker.supertab` file be owned by **root**:
+     
+         chown root docker.supertab
+      
+  6. Include the `docker.supertab` in your `/etc/super.tab`:
 
         :include /path/to/docker.supertab
-  6. Done.
+  7. Done.
 
 To get information about all available commands **that you're allowed
 to run** do `super -H`.
