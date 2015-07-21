@@ -46,12 +46,17 @@ docker-attach "/usr/bin/docker attach" \
               info="Attach to a running container." \
               $docker_users
 
-## Stop a container, given a docker container name.
+## Start a container, given a docker container ID.
 docker-stop "/usr/bin/docker stop" \
             info="Stop a given container." \
             $docker_users
 
-## Delete a container, given a docker container name.
+## Stop a container, given a docker container ID.
+docker-stop "/usr/bin/docker stop" \
+            info="Stop a given container." \
+            $docker_users
+
+## Delete a container, given a docker container ID.
 docker-rm "/usr/bin/docker rm" \
           info="Remove a stopped container." \
           $docker_users
