@@ -37,7 +37,7 @@ docker-build "/usr/bin/docker build -t" \
 
 ## Runs a container, given a repository and a branch.
 ## Example: '$super docker-run -v=/path/to/api-repositories:/site/api luq.io/base:<branchname>'.
-docker-run "/usr/bin/docker run -d -P" \
+docker-run "/usr/bin/docker run -d" \
            info="Run a given image in detached mode and publish to random host ports." \
            $docker_users
 
