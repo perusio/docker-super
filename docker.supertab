@@ -47,9 +47,9 @@ docker-attach "/usr/bin/docker attach" \
               $docker_users
 
 ## Start a container, given a docker container ID.
-docker-stop "/usr/bin/docker stop" \
-            info="Stop a given container." \
-            $docker_users
+docker-start "/usr/bin/docker start" \
+             info="Start a given container." \
+             $docker_users
 
 ## Stop a container, given a docker container ID.
 docker-stop "/usr/bin/docker stop" \
