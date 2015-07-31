@@ -33,8 +33,10 @@ docker commands.
     specific commands. For example `$docker_cleaners` is the group of
     users that can remove running containers.
 
-        ## Users that can remove running containers.
-        :define docker_cleaners perusio, fooluser, another_foo_user
+```shell
+## Users that can remove running containers.
+:define docker_cleaners perusio, fooluser, another_foo_user
+```
 
   4. Clone this repository:
      
@@ -55,7 +57,3 @@ to run** do `super -H`.
 More information is available in
 [`super(1)`](http://www.ucolick.org/~will/RUE/super/super.1.html) man
 page. The `super.tab` format is in [`super.tab(5)`](http://www.ucolick.org/~will/RUE/super/super.5.html).
-
-## TODO
-
-Keep adding new commands: `rmi`, etc.
