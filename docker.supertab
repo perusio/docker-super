@@ -90,3 +90,8 @@ docker-images "/usr/bin/docker images" \
 docker-pause "/usr/bin/docker pause" \
              info="Pause a given container." \
              $docker_users
+
+## Show information about the running docker daemon.
+docker-info "/usr/bin/docker info" \
+            info="Display information about the running daemon." \
+            $docker_users
