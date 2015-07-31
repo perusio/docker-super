@@ -13,7 +13,7 @@ Therefore to run the docker CLI a bunch of aliases are created that
 allow to use docker without `sudo` or as root.
 
 This is what I propose everywhere I go and whenever I need to run
-docker commands.
+docker and [docker-compose](http://docs.docker.com/compose/) commands..
 
 ## Usage
 
@@ -26,8 +26,10 @@ docker commands.
     that all users that are allowed ro run docker commands are in the
     group `$docker_users`. For example:
 
-        ## Users that have permission to use the commands
-        :define docker_users perusio, luser, another_user
+```shell
+## Users that have permission to use the commands.
+:define docker_users perusio, luser, another_user
+```
 
  3. Customize it to your liking, e.g., by defining special groups for
     specific commands. For example `$docker_cleaners` is the group of
@@ -38,18 +40,25 @@ docker commands.
 :define docker_cleaners perusio, fooluser, another_foo_user
 ```
 
-  4. Clone this repository:
+ 4. Clone this repository:
      
         git clone https://github.com/perusio/docker-super.git
 
-  5. Make the `docker.supertab` file be owned by **root**:
+ 5. Make the `docker.supertab` file be owned by **root**:
      
          chown root docker.supertab
       
-  6. Include the `docker.supertab` in your `/etc/super.tab`:
+ 6. Include the `docker.supertab` in your `/etc/super.tab`:
 
-        :include /path/to/docker.supertab
-  7. Done.
+```shell
+:include /path/to/docker.supertab
+```
+
+ 7. Include the `docker-compose.supertab` in your `/etc/super.tab`:
+
+```shell
+:include /path/to/docker-compose.supertab
+```
 
 To get information about all available commands **that you're allowed
 to run** do `super -H`.
