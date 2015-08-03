@@ -26,19 +26,19 @@ docker and [docker-compose](http://docs.docker.com/compose/) commands..
     that all users that are allowed ro run docker commands are in the
     group `$docker_users`. For example:
 
-```shell
-## Users that have permission to use the commands.
-:define docker_users perusio, luser, another_user
-```
+    ```shell
+    ## Users that have permission to use the commands.
+    :define docker_users perusio, luser, another_user
+    ```
 
  3. Customize it to your liking, e.g., by defining special groups for
     specific commands. For example `$docker_cleaners` is the group of
     users that can remove running containers.
 
-```shell
-## Users that can remove running containers.
-:define docker_cleaners perusio, fooluser, another_foo_user
-```
+    ```shell
+    ## Users that can remove running containers.
+    :define docker_cleaners perusio, fooluser, another_foo_user
+    ```
 
  4. Clone this repository:
      
@@ -50,15 +50,16 @@ docker and [docker-compose](http://docs.docker.com/compose/) commands..
       
  6. Include the `docker.supertab` in your `/etc/super.tab`:
 
-```shell
-:include /path/to/docker.supertab
-```
+    ```shell
+    :include /path/to/docker.supertab
+    ```
 
  7. Include the `docker-compose.supertab` in your `/etc/super.tab`:
 
-```shell
-:include /path/to/docker-compose.supertab
-```
+    ```shell
+    :include /path/to/docker-compose.supertab
+    ```
+ 8. Done.
 
 To get information about all available commands **that you're allowed
 to run** do `super -H`.
