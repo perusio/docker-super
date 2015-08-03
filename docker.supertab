@@ -95,3 +95,8 @@ docker-pause "/usr/bin/docker pause" \
 docker-info "/usr/bin/docker info" \
             info="Display information about the running daemon." \
             $docker_users
+
+## Pulling images from a registry.
+docker-pull "/usr/bin/docker pull" \
+            info="Pulls an image from a registry. Variable REGISTRY_HOST is set to registry-1.docker.io by default." \
+            $docker_users
