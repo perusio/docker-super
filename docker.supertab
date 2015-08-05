@@ -100,3 +100,63 @@ docker-info "/usr/bin/docker info" \
 docker-pull "/usr/bin/docker pull" \
             info="Pulls an image from a registry. Variable REGISTRY_HOST is set to registry-1.docker.io by default." \
             $docker_users
+
+## Show an image history.
+docker-history "/usr/bin/docker history" \
+               info="Show an image history." \
+               $docker_users
+
+## Show the logs inside a container.
+docker-logs "/usr/bin/docker logs" \
+            info="Show the logs inside a container." \
+            $docker_users
+
+## Show the processes running inside a container.
+docker-top "/usr/bin/docker top" \
+           info="Show processes running inside a container." \
+           $docker_users
+
+## Show the ports being used and mapping inside a running container.
+docker-port "/usr/bin/docker port" \
+            info="List the port mappings in a running container." \
+            $docker_users
+
+## Search docker hub for a given image using a search term.
+docker-search "/usr/bin/docker search" \
+              info="Search Docker Hub for a given term among available images." \
+              $docker_users
+
+## Commits the changes effectuated on a running container.
+docker-commit "/usr/bin/docker commit" \
+              info="Commit changes to a running container." \
+              $docker_users
+
+## Tag a given image into a repository.
+docker-tag "/usr/bin/docker tag" \
+           info="Tag an image into a repository (registry) with a given name." \
+           $docker_users
+
+## Push a given image into a registry.
+docker-push "/usr/bin/docker push" \
+            info="Push an image into a repository (registry)." \
+            $docker_users
+
+## Exports the filesystem of a given container as a tarball to stdout.
+docker-export "/usr/bin/docker export" \
+              info="Export the filesystem of given container as a tarball to stdout. Use '-o' to specify output tarball." \
+              $docker_users
+
+## Imports a tarball to a container.
+docker-import "/usr/bin/docker import" \
+              info="Import a tarball (compressed or not) to a given docker image using an URL or piping from stdin." \
+              $docker_users
+
+## Saves an image to a tarball.
+docker-save "/usr/bin/docker save" \
+            info="Saves the image of given container as a tarball to stdout. Use '-o' to specify output. It includes all metadata." \
+            $docker_users
+
+## Loads a tarball to a container.
+docker-load "/usr/bin/docker load" \
+            info="Loads a tarball (compressed or not) to a given docker image using an URL or piping from stdin. Restores metadata." \
+            $docker_users
