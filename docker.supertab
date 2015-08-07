@@ -160,3 +160,13 @@ docker-save "/usr/bin/docker save" \
 docker-load "/usr/bin/docker load" \
             info="Loads a tarball (compressed or not) to a given docker image using an URL or piping from stdin. Restores metadata." \
             $docker_users
+
+## Sends a signal to a docker container,
+docker-kill "/usr/bin/docker kill" \
+            info="Sends a signal to a docker container. Default signal is SIGKILL (-s <signal>)." \
+            $docker_users
+
+## Get the docker version.
+docker-version "/usr/bin/docker version" \
+               info="Get the docker daemon version number." \
+               $docker_users
